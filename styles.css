@@ -19,15 +19,15 @@ body{
     font-size: 150%;
 }
 #Life{
-    width: 18%;
+    width: 15%;
     display: inline-block;
-    font-size: 500%;
+    font-size: 350%;
 
 }
 #Minus{
     background-color: rgb(146, 53, 53);
     color: white;
-    width: 15%;
+    width: 12.5%;
     height: 80%;
     text-align: left;
     border: 2px solid white;
@@ -45,7 +45,7 @@ body{
 #Plus{
     background-color: rgb(59, 108, 59);
     color: white;
-    width: 15%;
+    width: 12.5%;
     text-align: right;
     border: 2px solid white;
     font-size: 180%;
