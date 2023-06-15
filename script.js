@@ -8,6 +8,7 @@ if ('wakeLock' in navigator) {
       try {
         wakeLock = await navigator.wakeLock.request('screen');
         console.log('Screen wake lock engaged!');
+        alert('Screen wake lock engaged!');
       } catch (error) {
         console.error(`${error.name}, ${error.message}`);
       }
@@ -18,6 +19,7 @@ if ('wakeLock' in navigator) {
       if (wakeLock !== null) {
         wakeLock.release().then(() => {
           console.log('Screen wake lock released.');
+          alert('Screen wake lock released');
         });
         wakeLock = null;
       }
