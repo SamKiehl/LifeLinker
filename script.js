@@ -1,3 +1,29 @@
+var noSleepOn = false;
+
+if ('wakeLock' in navigator) {
+    let wakeLock = null;
+  
+    // Function to request a wake lock
+    async function requestWakeLock() {
+      try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Screen wake lock engaged!');
+      } catch (error) {
+        console.error(`${error.name}, ${error.message}`);
+      }
+    }
+  
+    // Function to release the wake lock
+    function releaseWakeLock() {
+      if (wakeLock !== null) {
+        wakeLock.release().then(() => {
+          console.log('Screen wake lock released.');
+        });
+        wakeLock = null;
+      }
+    }
+}
+
 var playerDiv = document.getElementById("Players");
 
 var startingLife = 40;
@@ -7,6 +33,18 @@ var playerObjects = [];
 
 // Function to generate new elements based on number of players.
 
+var keepScreenAwake = document.getElementById("NoSleep");
+
+keepScreenAwake.addEventListener("click", () => {
+    if(noSleepOn){
+        releaseWakeLock();
+        alert("Screen Lock Disabled");
+        return;
+    }
+    requestWakeLock();
+    alert("Screen Lock Enabled");
+});
+
 var addPlayer = document.getElementById("AddPlayer");
 
 addPlayer.addEventListener("click", () => {
@@ -14,12 +52,12 @@ addPlayer.addEventListener("click", () => {
     x = generateNewPlayer(startingLife, numPlayers);
     //console.log(x);
     playerObjects.push(x);
-   
-
+    
+    
     refreshPlayerObjects();
     
     playerDiv.innerHTML = players;
-
+    
 });
 
 generateNewPlayer = (startingLife, numPlayers) => {
@@ -56,3 +94,4 @@ refreshPlayerObjects = () => {
     }
     playerDiv.innerHTML = players;
 }
+
