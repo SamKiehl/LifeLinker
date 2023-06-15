@@ -27,34 +27,29 @@ body{
 #Minus{
     background-color: rgb(146, 53, 53);
     color: white;
-    width: 12.5%;
+    width: 20%;
     height: 80%;
-    text-align: left;
     border: 2px solid white;
     font-size: 160%;
 }
 #MinusMinus{
     background-color: maroon;
     color: white;
-    width: 7.5%;
-    height: 80%;
-    text-align: left;
+    width: 15%;
     border: 2px solid white;
     font-size: 160%;
 }
 #Plus{
     background-color: rgb(59, 108, 59);
     color: white;
-    width: 12.5%;
-    text-align: right;
+    width: 20%;
     border: 2px solid white;
     font-size: 160%;
 }
 #PlusPlus{
     background-color: darkgreen;
     color: white;
-    width: 7.5%;
-    text-align: right;
+    width: 15%;
     border: 2px solid white;
     font-size: 160%;
 }
