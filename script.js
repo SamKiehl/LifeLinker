@@ -29,8 +29,8 @@ generateNewPlayer = (startingLife, numPlayers) => {
     x.index = number - 1;
     x.life = startingLife;
     x.addLife = (amount) => {x.life += amount};
-    x.html = `<div class="player">${x.name}<br><button onclick="addLife(${x.index}, -10);", id="MinusMinus"><b>--</b></button><button onclick="addLife(${x.index}, -1);", id="Minus"><b>-</b></button> <div id="Life"><b>${x.life}</b></div> <button onclick="addLife(${x.index}, 1);", id="Plus"><b>+</b></button><button onclick="addLife(${x.index}, 10);", id="PlusPlus"><b>++</b></button></div>`;
-    x.updateHTML = () => x.html = `<div class="player">${x.name}<br><button onclick="addLife(${x.index}, -10);", id="MinusMinus"><b>--</b></button><button onclick="addLife(${x.index}, -1);", id="Minus"><b>-</b></button> <div id="Life"><b>${x.life}</b></div> <button onclick="addLife(${x.index}, 1);", id="Plus"><b>+</b></button><button onclick="addLife(${x.index}, 10);", id="PlusPlus"><b>++</b></button></div>`;
+    x.html = `<div class="player">${x.name}<br><div id="Life"><b>${x.life}</b></div><br><button onclick="addLife(${x.index}, -10);", id="MinusMinus"><b>--</b></button><button onclick="addLife(${x.index}, -1);", id="Minus"><b>-</b></button>  <button onclick="addLife(${x.index}, 1);", id="Plus"><b>+</b></button><button onclick="addLife(${x.index}, 10);", id="PlusPlus"><b>++</b></button></div>`;
+    x.updateHTML = () => x.html = `<div class="player">${x.name}<br><div id="Life"><b>${x.life}</b></div><br><button onclick="addLife(${x.index}, -10);", id="MinusMinus"><b>--</b></button><button onclick="addLife(${x.index}, -1);", id="Minus"><b>-</b></button>  <button onclick="addLife(${x.index}, 1);", id="Plus"><b>+</b></button><button onclick="addLife(${x.index}, 10);", id="PlusPlus"><b>++</b></button></div>`;
 
     //console.log(x);
     return x;
